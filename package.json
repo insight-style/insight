@@ -1,0 +1,44 @@
+{
+  "name": "insight",
+  "version": "1.0.0",
+  "description": "丁香园 Insight 产品线设计规范",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node devServer.js",
+    "clear:dist": "rimraf dist",
+    "build": "npm run clear:dist && npm run build:development",
+    "depoly": "npm run clear:dist && npm run build:production",
+    "now-build": "npm run depoly",
+    "build:development": "webpack --config webpack.dev.conf.js",
+    "build:production": "webpack --config webpack.prod.conf.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/insight-style/insight.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/insight-style/insight/issues"
+  },
+  "homepage": "https://github.com/insight-style/insight#readme",
+  "dependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "primer": "^10.9.0"
+  },
+  "devDependencies": {
+    "css-loader": "^1.0.1",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "pug": "^2.0.3",
+    "pug-loader": "^2.4.0",
+    "rimraf": "^2.6.2",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}
