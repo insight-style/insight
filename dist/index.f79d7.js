@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "6d872ba88e53d8e1129e";
+/******/ 	var hotCurrentHash = "f79d72ac4173d8c55f89";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -259,7 +259,7 @@
 /******/ 				};
 /******/ 			});
 /******/ 			hotUpdate = {};
-/******/ 			var chunkId = "main";
+/******/ 			var chunkId = "index";
 /******/ 			// eslint-disable-next-line no-lone-blocks
 /******/ 			{
 /******/ 				/*globals chunkId */
@@ -789,7 +789,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(0)(__webpack_require__.s = 0);
+/******/ 	return hotCreateRequire("./src/entries/index.js")(__webpack_require__.s = "./src/entries/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1148,7 +1148,7 @@ function pug_rethrow(err, filename, lineno, str){
     throw err;
   }
   try {
-    str = str || __webpack_require__(/*! fs */ 1).readFileSync(filename, 'utf8')
+    str = str || __webpack_require__(/*! fs */ 0).readFileSync(filename, 'utf8')
   } catch (ex) {
     pug_rethrow(err, null, lineno)
   }
@@ -1765,31 +1765,6 @@ document.querySelector('body').innerHTML = navHtml
 
 /***/ }),
 
-/***/ "./src/entries/support/index.js":
-/*!**************************************!*\
-  !*** ./src/entries/support/index.js ***!
-  \**************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var primer_build_build_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! primer/build/build.css */ "./node_modules/primer/build/build.css");
-/* harmony import */ var primer_build_build_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(primer_build_build_css__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_main_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/main.less */ "./src/css/main.less");
-/* harmony import */ var _css_main_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_main_less__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-const nav = __webpack_require__(/*! ../../pugs/support/index.pug */ "./src/pugs/support/index.pug")
-
-const navHtml = nav()
-
-document.querySelector('body').innerHTML = navHtml
-
-
-/***/ }),
-
 /***/ "./src/pugs/index.pug":
 /*!****************************!*\
   !*** ./src/pugs/index.pug ***!
@@ -1850,20 +1825,6 @@ module.exports = template;
 
 /***/ }),
 
-/***/ "./src/pugs/support/index.pug":
-/*!************************************!*\
-  !*** ./src/pugs/support/index.pug ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var pug = __webpack_require__(/*! ../../../node_modules/pug-runtime/index.js */ "./node_modules/pug-runtime/index.js");
-
-function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;pug_html = pug_html + "\u003Ch1\u003ESupport\u003C\u002Fh1\u003E";;return pug_html;};
-module.exports = template;
-
-/***/ }),
-
 /***/ "./src/pugs/typography.png":
 /*!*********************************!*\
   !*** ./src/pugs/typography.png ***!
@@ -1876,19 +1837,6 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAACqCAYAAABc
 /***/ }),
 
 /***/ 0:
-/*!*******************************************************************!*\
-  !*** multi ./src/entries/index.js ./src/entries/support/index.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! /Users/jiangxuan/Works/insight/src/entries/index.js */"./src/entries/index.js");
-module.exports = __webpack_require__(/*! /Users/jiangxuan/Works/insight/src/entries/support/index.js */"./src/entries/support/index.js");
-
-
-/***/ }),
-
-/***/ 1:
 /*!********************!*\
   !*** fs (ignored) ***!
   \********************/
@@ -1900,4 +1848,4 @@ module.exports = __webpack_require__(/*! /Users/jiangxuan/Works/insight/src/entr
 /***/ })
 
 /******/ });
-//# sourceMappingURL=main.6d872.js.map
+//# sourceMappingURL=index.f79d7.js.map

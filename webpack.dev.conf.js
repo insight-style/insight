@@ -15,10 +15,6 @@ const developmentConfig = {
     filename: '[name].[hash:5].js'
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve('./template.html'),
-      title: 'Insight Style Guide'
-    }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash:5].css'
     }),

@@ -1,10 +1,11 @@
 const path = require('path')
 const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const rootDir = path.resolve(__dirname, './src/entries')
-// const entries = fs.readdirSync(rootDir).map(i => path.join(rootDir, i))
 const entries = {}
+const htmlWebpackPlugins = []
 
 function walkDir(dirPath) {
   const ls = fs.readdirSync(dirPath)
@@ -13,8 +14,16 @@ function walkDir(dirPath) {
     if (fs.statSync(path.join(dirPath, item)).isDirectory()) {
       walkDir(path.join(dirPath, item))
     } else {
-      
-      entries.push(path.join(dirPath, item))
+      const absDirPath = path.join(dirPath, item)
+      entries[
+          absDirPath.slice(rootDir.length + 1, absDirPath.length - 3)
+      ] = path.join(dirPath, item)
+      htmlWebpackPlugins.push(new HtmlWebpackPlugin({
+        template: path.resolve('./template.html'),
+        title: 'Insight Style Guide',
+        chunks: [absDirPath.slice(rootDir.length + 1, absDirPath.length - 3)],
+        filename: `${absDirPath.slice(rootDir.length + 1, absDirPath.length - 3)}.html`
+      }))
     }
   })
 }
@@ -66,5 +75,8 @@ module.exports = {
         }]
       }
     ]
-  }
+  },
+  plugins: [
+    ...htmlWebpackPlugins
+  ]
 }

@@ -1,1 +1,25 @@
-h1 Support
+include ../nav.pug
+.d-flex.d-flex-wrap.d-flex-md-wrap
+  main.flex-row.flex-lg-column.main-content.mt-4.mt-lg-6.pb-6.mx-auto.px-3.md-order-1
+    .clearfix
+      nav(aria-label="Breadcrumb")
+        ol
+          li.breadcrumb-item.text-small
+            a(href="/") Insight-ui
+          li.breadcrumb-item.text-small.breadcrumb-item-selected
+            a.text-gray(href="/support") &nbsp;Support
+      h2.f00-light.border-0.pb-3.d-block.v-align-middle.mt-2 Support
+      .markdown-body
+        p Insight-ui 建立在构成我们样式基础的系统之上, 并且指导我们书写和组织 CSS 的方式. 在系统的层次上面帮助我们样式统一和具有通用性, 并帮助我们实现视觉层次和垂直的方式.
+        p 我们使用 Less 变量来保持系统的色彩, 排版, 间距和其他基础样式的一致性. 有时我们使用 Less mixins 来应用多个 CSS 属性, 它们是常用的多模式的常用解决方案.
+        p 该文档已经覆盖了变量, mixins, 以及由以下构建成的系统:
+        ul
+          li
+            a(href="/support/breakpoints") 响应式断点
+          li
+            a(href="/support/colors") 色彩
+          li
+            a(href="/support/spacing") 间隔
+          li
+            a(href="/support/typography") 字体
+  include ../sidebar.pug
