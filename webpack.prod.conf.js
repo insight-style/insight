@@ -1,68 +1,24 @@
 const path = require('path')
+const fs = require('fs')
 const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpackMerge = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-module.exports = {
-  mode: 'development',
+const webpackCommonConfig = require('./webpack.common')
+
+const developmentConfig = {
+  mode: 'production',
   devtool: 'source-map',
-  entry: './src/entries/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[hash:5].js'
   },
-  module: {
-    rules: [{
-        test: /\.pug$/,
-        use: 'pug-loader'
-      },
-      {
-        test: /\.less$/,
-        use: [{
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              module: true
-            }
-          },
-          {
-            loader: 'less-loader'
-          }
-        ]
-      },
-      {
-        test: /\.css$/,
-        use: [{
-            loader: MiniCssExtractPlugin.loader
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              module: true
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 100000
-          }
-        }]
-      }
-    ]
-  },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve('./template.html'),
-      title: 'Insight Style Guide'
-    }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash:5].css'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
 }
+
+module.exports = webpackMerge(developmentConfig, webpackCommonConfig)
