@@ -40,3 +40,33 @@
   outline: none;
   box-shadow: none;
 }
+.sidebar {
+  position: sticky;
+  top: 68px;
+  width: 24%;
+  padding-top: 0;
+  min-height: 100vh;
+  min-width: 200px;
+  max-width: 300px;
+}
+.f000-light {
+  font-size: 60px !important;
+  font-weight: 300;
+}
+.md-order-1 {
+  order: 0;
+}
+@media (min-width: 1012px) {
+  .md-order-1 {
+    order: 1;
+  }
+  .main-content {
+    max-width: 56em;
+  }
+}
+.border-thick {
+  border-width: 5px !important;
+}
+.text-yellow {
+  color: #f9c513;
+}

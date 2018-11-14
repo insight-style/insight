@@ -1,16 +1,27 @@
 const path = require('path')
-const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+const rootDir = path.resolve(__dirname, './src/entries')
+// const entries = fs.readdirSync(rootDir).map(i => path.join(rootDir, i))
+const entries = {}
+
+function walkDir(dirPath) {
+  const ls = fs.readdirSync(dirPath)
+
+  ls.forEach(item => {
+    if (fs.statSync(path.join(dirPath, item)).isDirectory()) {
+      walkDir(path.join(dirPath, item))
+    } else {
+      
+      entries.push(path.join(dirPath, item))
+    }
+  })
+}
+walkDir(rootDir)
+
 module.exports = {
-  mode: 'development',
-  devtool: 'source-map',
-  entry: './src/entries/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[hash:5].js'
-  },
+  entry: entries,
   module: {
     rules: [{
         test: /\.pug$/,
@@ -55,14 +66,5 @@ module.exports = {
         }]
       }
     ]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve('./template.html'),
-      title: 'Insight Style Guide'
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].[hash:5].css'
-    })
-  ]
+  }
 }

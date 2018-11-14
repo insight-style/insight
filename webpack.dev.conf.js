@@ -1,44 +1,18 @@
 const path = require('path')
+const fs = require('fs')
 const webpack = require('webpack')
+const webpackMerge = require('webpack-merge')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-module.exports = {
+const webpackCommonConfig = require('./webpack.common')
+
+const developmentConfig = {
   mode: 'development',
   devtool: 'source-map',
-  entry: './src/entries/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[hash:5].js'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.pug$/,
-        use: 'pug-loader'
-      },
-      {
-        test: /\.less$/,
-        use: [
-          { loader: 'style-loader' },
-          { loader: 'css-loader', options: { module: true } },
-          { loader: 'less-loader' }
-        ]
-      },
-      {
-        test: /\.css$/,
-        use: [{
-            loader: MiniCssExtractPlugin.loader
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              module: true
-            }
-          }
-        ]
-      }
-    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -51,3 +25,5 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ]
 }
+
+module.exports = webpackMerge(developmentConfig, webpackCommonConfig)

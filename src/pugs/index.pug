@@ -1,0 +1,75 @@
+include nav.pug
+.d-flex.flex-wrap.flex-lg-nowrap
+  .md-order-1.d-flex.flex-lg-column.flex-auto.flex-wrap
+    .flex-row.width-full.bg-blue.py-3.py-lg-6
+      .main-content.mx-auto.py-4.px-3.px-md-6.px-lg-3.text-white
+        div
+          h1.mb-4.f000-light Insight-ui
+          .f2-light.pb-4
+            span 用 Insight-ui 构建网站的资源, 工具, 设计规范, 丁香园&nbsp;
+            a.text-white(href="https://db.dxy.cn/v5/home" target="_blank") Insight
+            span &nbsp;的设计和前端框架.
+    .flex-row.main-content.my-6.mx-auto.px-3.px-md-6.px-lg-3
+      section.pb-4
+        h2.f00-light.pt-6 引言
+        .flash.flash-warn.my-3 Note: 处于起始阶段, 尚不足以使用在生产环境
+        p.f3-light.mb-4
+          span 我们的目标是创建一个系统, 它可以让我们构建统一的用户体验变得容易. 该目标体现在我们的设计和代码. 我们的 CSS 代码起源于 
+          span
+            a(href="https://styleguide.github.com/primer/") Primer(Github的设计规范)
+          span , Object Oriented CSS 原则, 功能 CSS, 和 BEM 类名结构.
+        p.f3-light.mb-4 该设计规范是一个持续性的文档, 随着我们优化和进化我们的设计系统而改变.
+        section.markdown-body
+          ul.list-style-none.border-left.pb-2.mb-6.border-thick
+            p.h5.mb-3 Section contents
+            li.mb-3
+              a.text-bold(href="#styles-overview") Styles overview
+            li
+              a.text-bold(href="#primer-packages") Primer packages
+        hr.mx-auto.my-6(style="width: 200px")
+        section#styles-overview.mb-6.pt-6.text-center
+          h3.f1.text-normal 高度可重用, 弹性样式
+          p.f3-light.mb-4.container-md 样式可以混合组合来实现多重排版, 不依赖它们的位置. 这些样式分为三类:
+          ul.list-style-none.d-flex.flex-wrap.flex-md-nowrap.gutter-lg.py-4.text-center
+            li.col-12.col-md-4.mb-5.mb-md-0
+              include ./utilities.svg
+              h3.text-normal
+                a.link-gray-dark(href="#") Utilities
+              p.px-1 单一目的, 不可变样式, 做一件事情就可以做的很棒.
+            li.col-12.col-md-4.mb-5.mb-md-0
+              include ./objects.svg
+              h3.text-normal
+                a.link-gray-dark(href="#") Objects
+              p.px-1 通用的页面和内容排版脚手架.
+            li.col-12.col-md-4.mb-5.mb-md-0
+              include ./components.svg
+              h3.text-normal
+                a.link-gray-dark(href="#") Components
+              p.px-1 常用的可见样式的抽象模式.
+        section.mb-6.pt-6
+          h3.f1.text-normal.text-center Insight-ui 的系统性设计
+          p.f3-light.mb-6.text-center.container-md.mx-auto Insight-ui 是由基础性的样式, 如间距, 字体, 色彩构成的一个系统.该系统性的方法帮助我们确保我们的风格一致和通用性.
+          .col-12.col-md-11.mx-auto
+            .d-flex.flex-wrap.flex-md-nowrap.mb-5.pt-4
+              .col-12.col-md-2.mb-3.mb-md-0.text-center.flex-self-center
+                include ./highly-composable-spacing-scale.svg
+              .col-12.col-md-10.px-2.pl-md-6
+                h4.f3.text-normal 高度可组合的间距比例
+                p 8基础的间距比例是高度可组合. margin(外边距)和padding(内边距) 间距符带来一致性的垂直和水平节奏, 同时保持伸缩性, 这样你就可以微调布局来适应所有的环境.
+            .d-flex.flex-wrap.flex-md-nowrap.mb-5.pt-4
+              .col-12.col-md-2.mb-3.mb-md-0.text-center.flex-self-center
+                img(width=100 src=require("./typography.png") alt="typography")
+              .col-12.col-md-10.px-2.pl-md-6
+                h4.f3.text-normal 可定制的字体设计
+                p 字体大小和行高选项协同工作来产生更智能的空间. 字体样式有多种重量和大小，因此我们可以根据内容和可读性进行适当的样式设置 Type 工具 允许我们在保持标记语义的同时更改视觉样式.
+            .d-flex.flex-wrap.flex-md-nowrap.pt-4
+              .col-12.col-md-2.mb-3.mb-md-0.text-center.flex-self-center
+                include ./meaning-color.svg
+              .col-12-col-md-10.px-2.pl-md-6
+                h4.f3.text-normal 富有意义的色彩
+                p 色彩系统允许我们为内容和交互添加有意义的信号. 颜色变量和工具类名提供主题样式选项，而不依赖于结构. 文本和背景颜色有多种组合，以确保我们构建包容性接口。
+        hr.mx-auto.my-6(style="width: 200px")
+        section#insight-ui-packages.mb-6.pt-4
+          h3.f1.text-normal Insight-ui packages
+          .flash.flash-warn TODO: 待做, 等待将框架的大部分定下来之后将发布 npm 包
+  include sidebar.pug

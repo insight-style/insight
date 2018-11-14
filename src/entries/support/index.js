@@ -1,7 +1,7 @@
 import 'primer/build/build.css'
-import '../css/main.less'
+import '../../css/main.less'
 
-const nav = require('../pugs/index.pug')
+const nav = require('../../pugs/support/index.pug')
 
 const navHtml = nav()
 
