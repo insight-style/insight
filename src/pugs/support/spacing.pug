@@ -1,1 +1,66 @@
 include ../nav.pug
+.d-flex.flex-wrap.flex-md-nowrap
+  main.flex-row.flex-lg-column.main-content.mt-4.mt-lg-6.pb-6.mx-auto.px-3.md-order-1
+    .clearfix
+      nav(aria-label="Breadcrumb")
+        ol
+          li.breadcrumb-item.text-small
+            a(href="/") Insight-ui
+          li.breadcrumb-item.text-small
+            span &nbsp;
+            a(href="/support") Support
+          li.breadcrumb-item.text-small.breadcrumb-item-selected &nbsp;Spacing
+      h2.f00-light.border-0.pb-3.d-block.v-align-middle.mt-2 空间
+      .markdown-body
+        ul
+          li
+            a(href="#spacing-scale") 空间比例
+          li
+            a(href="#") Em-based spacing
+        h2
+          a#spacing-scale.anchor(href="spacing-scale")
+            include ../octicons/octicon-link.svg
+          span 空间比例
+        p
+          span 空间比例是&nbsp;
+          span
+            strong 以8为基础
+          span &nbsp;的比例. 我们选择以8为基础的比例是因为8是一个高度可组合的数字(它可以乘除多次并产生整数). 比例的例外是它从4px开始，允许更小的填充和边距用于站点的更密集部分.
+        table
+          thead
+            tr
+              th 变量
+              th 缩放比例
+              th 值
+          tbody
+            tr
+              td $spacer-0
+              td 0
+              td 0
+            tr
+              td $spacer-1
+              td 1
+              td 4px
+            tr
+              td $spacer-2
+              td 2
+              td 8px
+            tr
+              td $spacer-3
+              td 3
+              td 16px
+            tr
+              td $spacer-4
+              td 4
+              td 24px
+            tr
+              td $spacer-5
+              td 5
+              td 32px
+            tr
+              td $spacer-6
+              td 6
+              td 40px
+        p 这些变量使用在组件内和自定义的 css 使用. 空间比例也被用在了 margin 和 padding 工具类名中.
+
+  include ../sidebar.pug
