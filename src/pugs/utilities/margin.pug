@@ -1,1 +1,214 @@
 include ../nav.pug
+.d-flex.flex-wrap.flex-lg-nowrap
+  main.main.flex-row.flex-lg-column.main-content.mt-4.mt-lg-6.pb-6.mx-auto.px-3.md-order-1
+    .clearfix
+      nav(aria-label="Breadcrumb")
+        ol
+          li.breadcrumb-item.text-small
+            a(href="/") Insight-ui
+          li.breadcrumb-item.text-small
+            span &nbsp;
+            a(href="/support") Utilities(工具类名)
+          li.breadcrumb-item.text-small.breadcrumb-item-selected &nbsp;Margin
+      h2.f00-light.border-0.pb-3.d-block.v-align-middle.mt-2 Margin
+      .markdown-body
+        p Margin 工具类名基于全局空间比例, 这样可以帮助我们保持水平和垂直的空间一致性. 这些工具类名帮助我们大量的减少了使用相同的属性的 CSS 代码, 并且允许我们实现许多不同的页面布局使用相同的风格.
+        ul
+          li
+            a(href="#") 命名规则
+          li
+            a(href="#") 一致边距
+          li
+            a(href="#") 方向边距
+          li
+            a(href="#") 居中元素
+          li
+            a(href="#") 重置边距
+          li
+            a(href="#") 响应式边距
+          li
+            a(href="#") 负值边距
+        h2
+          a.anchor(href="#naming-convention" id="naming-convention" aria-hidden="true")
+            include ../octicons/octicon-link.svg
+          span 命名规则
+        p 因为 margin 工具类名用在不同的地方有许多变化, 我们使用简写命名约定来帮助我们保持类名简洁.
+        table
+          thead
+            tr
+              th 缩写
+              th 说明
+          tbody
+            tr
+              td m
+              td margin
+            tr
+              td t
+              td top
+            tr
+              td r
+              td right
+            tr
+              td b
+              td bottom
+            tr
+              td l
+              td left
+            tr
+              td x
+              td 水平, left 和 right
+            tr
+              td y
+              td 垂直, top 和 bottom
+            tr
+              td 0
+              td 0px
+            tr
+              td 1
+              td 4px
+            tr
+              td 2
+              td 8px
+            tr
+              td 3
+              td 16px
+            tr
+              td 4
+              td 24px
+            tr
+              td 5
+              td 32px
+            tr
+              td 6
+              td 40px
+        p
+          em Note: 例子中的蓝色部分代表元素, 橘黄色部分代表边距
+        h2
+          a.anchor(href="#uniform-margins" id="uniform-margins" aria-hidden="true")
+            include ../octicons/octicon-link.svg
+          span 一致边距
+        p 使用一致边距工具类名来给一个元素的四周赋予相同的边距. 这些工具类名可以改变或者是覆盖默认边距, 可以使用空间比例从 0-6.
+      .mt-3.position-relative.clearfix.p-3.styleguide-example.border.border-gray-light
+        .margin-orange.d-inline-block
+          .d-inline-block.block-blue.m-0 .m-0
+        span &nbsp;
+        .margin-orange.d-inline-block
+          .d-inline-block.block-blue.m-1 .m-1
+        span &nbsp;
+        .margin-orange.d-inline-block
+          .d-inline-block.block-blue.m-2 .m-2
+        span &nbsp;
+        .margin-orange.d-inline-block
+          .d-inline-block.block-blue.m-3 .m-3
+        span &nbsp;
+        .margin-orange.d-inline-block
+          .d-inline-block.block-blue.m-4 .m-4
+        span &nbsp;
+        .margin-orange.d-inline-block
+          .d-inline-block.block-blue.m-5 .m-5
+        span &nbsp;
+        .margin-orange.d-inline-block
+          .d-inline-block.block-blue.m-6 .m-6
+      .markdown-body.mb-3.position-relative
+        .js-zeroclipboard-target
+          pre.hightlight-html.highlight
+            code
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;margin-orange d-inline-block&quot;
+              span.nt &gt;
+              span &#xA;&nbsp;&nbsp;
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;d-inline-block block-blue m-0&quot;
+              span.nt &gt;
+              | .m-0
+              span.nt &lt;/div&gt;
+              span &#xA;
+              span.nt &lt;/div&gt;
+              span &#xA;
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;margin-orange d-inline-block&quot;
+              span.nt &gt;
+              span &#xA;&nbsp;&nbsp;
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;d-inline-block block-blue m-1&quot;
+              span.nt &gt;
+              | .m-1
+              span.nt &lt;/div&gt;
+              span &#xA;
+              span.nt &lt;/div&gt;
+              span &#xA;
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;margin-orange d-inline-block&quot;
+              span.nt &gt;
+              span &#xA;&nbsp;&nbsp;
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;d-inline-block block-blue m-2&quot;
+              span.nt &gt;
+              | .m-2
+              span.nt &lt;/div&gt;
+              span &#xA;
+              span.nt &lt;/div&gt;
+              span &#xA;
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;margin-orange d-inline-block&quot;
+              span.nt &gt;
+              span &#xA;&nbsp;&nbsp;
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;d-inline-block block-blue m-3&quot;
+              span.nt &gt;
+              | .m-3
+              span.nt &lt;/div&gt;
+              span &#xA;
+              span.nt &lt;/div&gt;
+              span &#xA;
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;margin-orange d-inline-block&quot;
+              span.nt &gt;
+              span &#xA;&nbsp;&nbsp;
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;d-inline-block block-blue m-4&quot;
+              span.nt &gt;
+              | .m-4
+              span.nt &lt;/div&gt;
+              span &#xA;
+              span.nt &lt;/div&gt;
+              span &#xA;
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;margin-orange d-inline-block&quot;
+              span.nt &gt;
+              span &#xA;&nbsp;&nbsp;
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;d-inline-block block-blue m-5&quot;
+              span.nt &gt;
+              | .m-5
+              span.nt &lt;/div&gt;
+              span &#xA;
+              span.nt &lt;/div&gt;
+              span &#xA;
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;margin-orange d-inline-block&quot;
+              span.nt &gt;
+              span &#xA;&nbsp;&nbsp;
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;d-inline-block block-blue m-6&quot;
+              span.nt &gt;
+              | .m-6
+              span.nt &lt;/div&gt;
+              span &#xA;
+              span.nt &lt;/div&gt;
+
+  include ../sidebar.pug
