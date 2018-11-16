@@ -356,4 +356,89 @@ include ../nav.pug
           a.anchor(href="#reset-margins" id="reset-margins")
             include ../octicons/octicon-link.svg
           span 重置 margin
+        p 
+          span 用&nbsp;
+          code m-0
+          span ,&nbsp;
+          code mt-0
+          span ,&nbsp;
+          code mr-0
+          span ,&nbsp;
+          code mb-0
+          span ,&nbsp;
+          code ml-0
+          span ,&nbsp;
+          code mx-0
+          span ,&nbsp;
+          code my-0
+          span &nbsp;重置排版元素或者是其他组件的内置 margin.
+      .mt-3.position-relative.clearfix.p-3.styleguide-example.border.border-gray-light
+        p.mb-0.block-blue No bottom margin on this paragraph.
+      .markdown-body.mb-3.position-relative
+        .js-zeroclipboard-target
+          pre.highlight-heml.highlight
+            code
+              span.nt &lt;p
+              span.na &nbsp;class=
+              span.s &quot;mb-0 block-blue&quot;
+              span.nt &gt;
+              | No bottom margin on this paragraph.
+              span.nt &lt;/p&gt;
+      .markdown-body
+        h2
+          a.anchor(href="#responsive-margins" id="responsive-margins" aria-hidden="true")
+            include ../octicons/octicon-link.svg
+          span 响应式 margins
+        p All margin utilities, except mx-auto, can be adjusted per breakpoint using the following formula: m[direction]-[breakpoint]-[spacer]. Each responsive style is applied to the specified breakpoint and up.
+      .mt-3.position-relative.clearfix.p-3.styleguide-example.border.border-gray-light
+        .d-inline-block.margin-orange
+          .mx-sm-2.mx-lg-4.d-inline-block.block-blue .mx-sm-2 .mx-lg-4
+      .markdown-body.mb-3.position-relative
+        .js-zeroclipboard-target
+          pre.highlight-html.highlight
+            code
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;d-inline-block margin-orange&quot;
+              span.nt &gt;
+              span &#xA;&nbsp;&nbsp;
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;mx-sm-2 mx-lg-4 d-inline-block block-blue&quot;
+              span.nt &gt;
+              span &#xA;&nbsp;&nbsp;
+              |    .mx-sm-2 .mx-lg-4
+              span &#xA;&nbsp;&nbsp;
+              span.nt &lt;/div&gt;
+              span &#xA;
+              span.nt &lt;/div&gt;
+      .markdown-body
+        h2
+          a.anchor(href="#" id="negative-margins" aria-hidden="true")
+            include ../octicons/octicon-link.svg
+          span 负值 margins
+        p You can add negative margins to the top, right, bottom, or left of an item by adding a negative margin utility. The formula for this is: m[direction]-n[spacer]. This also works responsively, with the following formula: m[direction]-[breakpoint]-n[spacer].
+      .markdown-body.mt-3.p-3.position-relative.border.border-gray-light
+        .d-inline-block.margin-orange.p-3
+          .d-inline-block.block-blue.mt-n4.mr-lg-n4 .mt-n4 .mr-lg-n6
+      .markdown-body.mb-3.position-relative
+        .js-zeroclipboard-target
+          pre.highlight-html.highlight
+            code
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;d-inline-block margin-orange p-3&quot;
+              span.nt &gt;
+              span &#xA;&nbsp;&nbsp;
+              span.nt &lt;div
+              span.na &nbsp;class=
+              span.s &quot;d-inline-block block-blue mt-n4 mr-lg-n4&quot;
+              span.nt &gt;
+              span &#xA;
+              |     .mt-n4 .mr-lg-n6
+              span &#xA;&nbsp;&nbsp;
+              span.nt &lt;/div&gt;
+              span &#xA;
+              span.nt &lt;/div&gt;
+          
   include ../sidebar.pug
