@@ -90,6 +90,146 @@ include ../nav.pug
               td 18
         p 字体设计比例被用在 字体设计工具类名 上.
         h2 字体设计变量
-          h4 Font size variables
-          
+        h4 Font size 变量
+        pre.highlight-less.highlight
+          code
+            span.c1
+              | // Heading sizes - mobile
+              | // h4&mdash;h6 remain the same size on both mobile &amp; desktop
+            span &#xA;
+            span.nv @h00-size-mobile
+            span.p :
+            span &nbsp;
+            span.m 40px
+            span.p ;
+            span &#xA;
+            span.nv @h0-size-mobile
+            span.p :
+            span &nbsp;
+            span.m 32px
+            span.p ;
+            span &#xA;
+            span.nv @h1-size-mobile
+            span.p :
+            span &nbsp;
+            span.m 26px
+            span.p ;
+            span &#xA;
+            span.nv @h2-size-mobile
+            span.p :
+            span &nbsp;
+            span.m 22px
+            span.p ;
+            span &#xA;
+            span.nv @h3-size-mobile
+            span.p :
+            span &nbsp;
+            span.m 18px
+            span.p ;
+            span &#xA;
+            span.c1
+              | // Heading sizes - desktop
+            span &#xA;
+            span.nv @h00-size
+            span.p :
+            span &nbsp;
+            span.m 48px
+            span.p ;
+            span &#xA;
+            span.nv @h0-size
+            span.p :
+            span &nbsp;
+            span.m 40px
+            span.p ;
+            span &#xA;
+            span.nv @h1-size
+            span.p :
+            span &nbsp;
+            span.m 32px
+            span.p ;
+            span &#xA;
+            span.nv @h2-size
+            span.p :
+            span &nbsp;
+            span.m 24px
+            span.p ;
+            span &#xA;
+            span.nv @h3-size
+            span.p :
+            span &nbsp;
+            span.m 20px
+            span.p ;
+            span &#xA;
+            span.nv @h4-size
+            span.p :
+            span &nbsp;
+            span.m 16px
+            span.p ;
+            span &#xA;
+            span.nv @h5-size
+            span.p :
+            span &nbsp;
+            span.m 14px
+            span.p ;
+            span &#xA;
+            span.nv @h6-size
+            span.p :
+            span &nbsp;
+            span.m 12px
+            span.p ;
+        h4 Font weight 变量
+        pre.highlight-less.highlight
+          code
+            span.nv @font-weight-bold
+            span.p :
+            span &nbsp;
+            span.m 600
+            span &nbsp;
+            span.o !
+            span.nb important
+            span.p ;
+            span &#xA;
+            span.nv @font-weight-light
+            span.p :
+            span &nbsp;
+            span.m 300
+            span &nbsp;
+            span.o !
+            span.nb important
+            span.p ;
+        h4 Line height 变量
+        pre.highlight-less.highlight
+          code
+            span.nv @lh-condensed-ultra
+            span.p :
+            span &nbsp;
+            span.m 1
+            span &nbsp;
+            span.o !
+            span.nb important
+            span.p ;
+            span &#xA;
+            span.nv @lh-condensed
+            span.p :
+            span &nbsp;
+            span.m 1
+            span.mi .25
+            span &nbsp;
+            span.o !
+            span.nb important
+            span.p ;
+            span &#xA;
+            span.nv @lh-default
+            span.p :
+            span &nbsp;
+            span.m 1
+            span.mi .5
+            span &nbsp;
+            span.o !
+            span.nb important
+            span.p ;
+        h2 Typography Mixins
+        p Typography mixins are available for heading styles and for our type scale. They can be used within components or custom CSS. The same styles are also available as utilities. which requires no additional CSS.
+        p Heading mixins are available for h1 through to h6, this includes the font-size and font-weight. Example:
+        
   include ../sidebar.pug
