@@ -1,1 +1,60 @@
 include ../nav.pug
+.d-flex.flex-wrap.flex-nowrap
+  main.flex-row.flex-lg-column.main-content.mt-4.mt-lg-6.pb-6.mx-auto.px-3.md-order-1
+    .clearfix
+      nav(aria-label="Breadcrumb")
+        ol
+          li.breadcrumb-item.text-small
+            a(href="/") Insight-ui
+          li.breadcrumb-item.text-small
+            span &nbsp;
+            a(href="/support") Support
+          li.breadcrumb-item.text-small.breadcrumb-item-selected &nbsp;色彩系统
+        h2.f00-light.border-0.pb-3.d-block.v-align-middle.mt-2 色彩系统
+        .markdown-body
+          ul#markdown-toc
+            li
+              a(href="#") 色彩调色板
+            li
+              a(href="#") 色彩变量
+              ul
+                li
+                  a(href="#") 灰色
+                li
+                  a(href="#") 蓝色
+                li
+                  a(href="#") 绿色
+                li
+                  a(href="#") 藏青色
+                li
+                  a(href="#") 紫色
+                li
+                  a(href="#") 黄色
+                li
+                  a(href="#") 橘黄色
+                li
+                  a(href="#") 红色
+                li
+                  a(href="#") 白色
+          h2
+            a#color-palette.anchor(href="#color-palette")
+              include ../octicons/octicon-link.svg
+            span 色彩调色板
+          .d-flex.h5.mb-6
+            .gray-500.d-flex.color-square.mr-2
+              p.p-3.text-white.m-0 Gray
+            .blue-500.d-flex.color-square.mr-2
+              p.p-3.text-white.m-0 Blue
+            .green-500.d-flex.color-square.mr-2
+              p.p-3.text-white.m-0 Green
+            .purple-500.d-flex.color-square.mr-2
+              p.p-3.text-white.m-0 Purple
+            .yellow-500.d-flex.color-square.mr-2
+              p.p-3.m-0 Yellow
+            .orange-500.d-flex.color-square.mr-2
+              p.p-3.m-0 Orange
+            .red-500.d-flex.color-square.mr-2
+              p.p-3.text-white.m-0 Red
+            .bg-white.d-flex.color-square.mr-2.border.border-gray-light
+              p.p-3.m-0 White
+  include ../sidebar.pug
