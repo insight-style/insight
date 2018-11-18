@@ -15,8 +15,7 @@ const developmentConfig = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].[hash:5].css'
-    }),
-    new webpack.HotModuleReplacementPlugin()
+    })
   ]
 }
 
