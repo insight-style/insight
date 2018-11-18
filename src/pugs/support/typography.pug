@@ -228,8 +228,47 @@ include ../nav.pug
             span.o !
             span.nb important
             span.p ;
-        h2 Typography Mixins
-        p Typography mixins are available for heading styles and for our type scale. They can be used within components or custom CSS. The same styles are also available as utilities. which requires no additional CSS.
-        p Heading mixins are available for h1 through to h6, this includes the font-size and font-weight. Example:
+        h2 字体设计 Mixins
+        p 字体设计 mixin 用在我们的标题样式和字体比例中. 也可以在组件或者是自定义 CSS 中使用. 使用工具类名中也可以实现相同的样式. 不需要任何额外的 CSS.
+        p 标题 mixin 可用于 h1 到 h6, 包括字体大小和字体重量. 例如:
+        pre.highlight-less.highlight
+          code
+            span.nc .styles
+            |  
+            span.p {
+            span &#xA;
+            span &nbsp;&nbsp;
+            span.k .
+            span.nd h1
+            span.p ;
+            span &#xA;
+            span.p }
+        p 响应式标题 mixin 可以用于在 sm 和 lg 断点之间调整字体. 只有标题 1-3 是响应式的. 标题 4-6 足够小, 所以在移动和桌面保持一致. 响应式标题 mixin 包括字体大小和字体重量和媒体查询. 想要使用一个响应式的标题 mixin, 在 标题后面加上 -responsive 后缀:
+        pre.hightlight-less.highlight
+          code
+            span.nc .styles
+            |  
+            span.p {
+            span &#xA;
+            span &nbsp;&nbsp;
+            span.k .
+            span.nd h1-responsive
+            span.p ;
+            span &#xA;
+            span.p }
+        p 响应式字体比例 mixin 同样可用. 字体比例 mixin 在 lg 断点赋予一个稍微大点的字体大小. 它们不会给予字体重量. 和响应式标题一样, 只在 f1 到 f3 可用, 在字体比例后面加上 -responsive 后缀, 例如:
+        pre.hightlight-less.highlight
+          code
+            span.nc .styles
+            |  
+            span.p {
+            span &#xA;
+            span &nbsp;&nbsp;
+            span.k .
+            span.nd f1-responsive
+            span.p ;
+            span &#xA;
+            span.p }
+
         
   include ../sidebar.pug
