@@ -1,4 +1,13 @@
 include ../nav.pug
 .d-flex.flex-wrap.flex-md-nowrap
-  main.main-content
+  main.main.flex-row.flex-lg-column.main-content.mt-4.mt-lg-6.pb-6.mx-auto.px-3.md-order-1
+    .clearfix
+      nav(aria-label="Breadcrumb")
+        ol
+          li.breadcrumb-item.text-small
+            a(href="/") Insight-ui
+          li.breadcrumb-item.text-small
+            span &nbsp;
+            a(href="/support") Utilities(工具类名)
+          li.breadcrumb-item.text-small.breadcrumb-item-selected &nbsp;Padding
   include ../sidebar.pug
