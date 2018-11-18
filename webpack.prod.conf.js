@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 const webpackMerge = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
