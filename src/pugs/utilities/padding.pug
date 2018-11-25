@@ -10,4 +10,22 @@ include ../nav.pug
             span &nbsp;
             a(href="/support") Utilities(工具类名)
           li.breadcrumb-item.text-small.breadcrumb-item-selected &nbsp;Padding
+      h2.foo-light.border-0.pb-3.d-block.v-align-middle.mt-2 Padding(内边距)
+      .markdown-body
+        p Margin 工具类名基于全局空间比例, 这样可以帮助我们保持水平和垂直的空间一致性. 这些工具类名帮助我们大量的减少了使用相同的属性的 CSS 代码, 并且允许我们实现许多不同的页面布局使用相同的风格.
+        ul
+          li
+            a(href="#") 命名规则
+          li
+            a(href="#") 一致内边距
+          li
+            a(href="#") 方向内边距
+          li
+            a(href="#") 响应式内边距
+          li
+            a(href="#") 响应式容器边距
+        h2
+          a(href="#").anchor
+            include ../octicons/octicon-link.svg
+          span 命名规则
   include ../sidebar.pug
