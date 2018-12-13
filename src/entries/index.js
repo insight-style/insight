@@ -1,8 +1,24 @@
-import 'primer/build/build.css'
-import '../css/main.less'
+import 'primer/build/build.css';
+import '../css/main.less';
 
-const nav = require('../pugs/index.pug')
+const nav = require('../pugs/index.pug');
 
-const navHtml = nav()
+const navHtml = nav();
 
-document.querySelector('body').innerHTML = navHtml
+document.querySelector('body').innerHTML = navHtml;
+
+Array.from(document.querySelectorAll('.sidebar a')).forEach(a => {
+  a.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    da('send', {
+      hitType: 'event',
+      eventCategory: 'sidebar',
+      eventAction: 'click',
+      eventLabel: this.getAttribute('href'),
+      hitCallback: () => {
+        location.href = this.getAttribute('href');
+      }
+    });
+  });
+});

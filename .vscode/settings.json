@@ -1,3 +1,10 @@
 {
-  "debug.node.autoAttach": "on"
+  "debug.node.autoAttach": "on",
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.endOfLine": "lf",
+  "[javascript]": {
+    "editor.formatOnSave": true
+  }
 }
