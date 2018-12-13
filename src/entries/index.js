@@ -11,7 +11,7 @@ Array.from(document.querySelectorAll('.sidebar a')).forEach(a => {
   a.addEventListener('click', function(event) {
     event.preventDefault();
 
-    da('send', {
+    ga('send', {
       hitType: 'event',
       eventCategory: 'sidebar',
       eventAction: 'click',
