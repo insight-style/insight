@@ -16,7 +16,7 @@ function walkDir(dirPath) {
     } else {
       const absDirPath = path.join(dirPath, item)
       entries[
-          absDirPath.slice(rootDir.length + 1, absDirPath.length - 3)
+        absDirPath.slice(rootDir.length + 1, absDirPath.length - 3)
       ] = path.join(dirPath, item)
       htmlWebpackPlugins.push(new HtmlWebpackPlugin({
         template: path.resolve('./template.html'),
@@ -73,6 +73,11 @@ module.exports = {
             limit: 100000
           }
         }]
+      },
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/
       }
     ]
   },
