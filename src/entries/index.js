@@ -8,7 +8,7 @@ const navHtml = nav();
 document.querySelector('body').innerHTML = navHtml;
 
 Array.from(document.querySelectorAll('.sidebar a')).forEach(a => {
-  a.addEventListener('click', function(event) {
+  a.addEventListener('click', function (event) {
     event.preventDefault();
 
     ga('send', {
@@ -22,3 +22,22 @@ Array.from(document.querySelectorAll('.sidebar a')).forEach(a => {
     });
   });
 });
+
+if (PerformanceObserver) {
+  const foo = new PerformanceObserver(function (list, observer) {
+    const navigationPerformance = list.getEntries()[0];
+    const duration = navigationPerformance.duration
+    ga('send', {
+      hitType: 'timing',
+      timingCategory: 'home',
+      timingVar: 'loadDuration',
+      timingValue: duration
+    })
+
+    observer.disconnect();
+  });
+
+  foo.observe({
+    entryTypes: ['navigation']
+  });
+}
