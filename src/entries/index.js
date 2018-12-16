@@ -31,7 +31,7 @@ if (PerformanceObserver) {
       hitType: 'timing',
       timingCategory: 'home',
       timingVar: 'loadDuration',
-      timingValue: duration
+      timingValue: Math.round(duration)
     })
 
     observer.disconnect();
