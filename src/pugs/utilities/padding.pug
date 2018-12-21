@@ -10,7 +10,7 @@ include ../nav.pug
             span &nbsp;
             a(href="/support") Utilities(工具类名)
           li.breadcrumb-item.text-small.breadcrumb-item-selected &nbsp;Padding
-      h2.foo-light.border-0.pb-3.d-block.v-align-middle.mt-2 Padding(内边距)
+      h2.f00-light.border-0.pb-3.d-block.v-align-middle.mt-2 Padding(内边距)
       .markdown-body
         p Margin 工具类名基于全局空间比例, 这样可以帮助我们保持水平和垂直的空间一致性. 这些工具类名帮助我们大量的减少了使用相同的属性的 CSS 代码, 并且允许我们实现许多不同的页面布局使用相同的风格.
         ul
@@ -28,4 +28,60 @@ include ../nav.pug
           a(href="#").anchor
             include ../octicons/octicon-link.svg
           span 命名规则
+        p 因为 padding 工具类名用在不同的地方有许多变化, 我们使用简写命名约定来帮助我们保持类名简洁.
+        table
+          thead
+            tr
+              th 缩写
+              th 说明
+          tbody
+            tr
+              td p
+              td padding
+            tr
+              td t
+              td top
+            tr
+              td r
+              td right
+            tr
+              td b
+              td bottom
+            tr
+              td l
+              td left
+            tr
+              td x
+              td 水平, left 和 right
+            tr
+              td y
+              td 垂直, top 和 bottom
+            tr
+              td 0
+              td 0px
+            tr
+              td 1
+              td 4px
+            tr
+              td 2
+              td 8px
+            tr
+              td 3
+              td 16px
+            tr
+              td 4
+              td 24px
+            tr
+              td 5
+              td 32px
+            tr
+              td 6
+              td 40px
+        p
+          em Note: 例子中的蓝色部分代表元素, 绿色色部分代表边距
+        h2
+          a.anchor(href="#uniform-margins" id="uniform-margins" aria-hidden="true")
+            include ../octicons/octicon-link.svg
+          span 一致内边距
+
   include ../sidebar.pug
