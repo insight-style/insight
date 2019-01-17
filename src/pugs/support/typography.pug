@@ -28,155 +28,118 @@ include ../nav.pug
             a(href="#") 字体设计 mixins
         h2 字体比例
         p 字体设计的比例旨在用于 Insight 的 ui. 文字大小和行高配合使用, 以便尽可能产生更合理的数字.
-        p 移动设备上面的字体较小, 在&nbsp;
-          code md
-          span &nbsp;断点处放大, 也就是桌面设备上面字体会更大.
+        p
+          s 移动设备上面的字体较小, 在&nbsp;
+            code md
+            span &nbsp;断点处放大, 也就是桌面设备上面字体会更大.
         table
           thead
             tr
               th Scale
-              th Font size: mobile
+              th
+                s Font size: mobile
               th Font size: desktop
-              th 1.25 line height
-              th 1.5 line height
+              th line height
+              th
+                s 1.25 line height
+              th
+                s 1.5 line height
           tbody
             tr
               td 00
-              td 40px
+              td
+                s 40px
               td 48px
-              td 60
-              td 72
+              td --
+              td
+                s 60
+              td
+                s 72
             tr
               td 0
-              td 32px
+              td
+                s 32px
               td 40px
-              td 50
-              td 60
+              td --
+              td
+                s 50
+              td
+                s 60
             tr
               td 1
-              td 26px
+              td
+                s 26px
               td 32px
-              td 40
-              td 48
+              td 40px
+              td
+                s 40
+              td
+                s 48
             tr
               td 2
-              td 22px
+              td
+                s 22px
               td 24px
-              td 30
-              td 36
+              td 32px
+              td
+                s 30
+              td
+                s 36
             tr
               td 3
-              td 18px
+              td
+                s 18px
               td 20px
-              td 25
-              td 30
+              td 28px
+              td
+                s 25
+              td
+                s 30
             tr
               td 4
+              td
+                s 16px
               td 16px
-              td 16px
-              td 20
-              td 24
+              td 24px
+              td
+                s 20
+              td
+                s 24
             tr
               td 5
+              td
+                s 14px
               td 14px
-              td 14px
-              td 17.5
-              td 21
+              td 22px
+              td
+                s 17.5
+              td
+                s 21
             tr
               td 6
+              td
+                s 12px
               td 12px
-              td 12px
-              td 15
-              td 18
+              td 22px
+              td
+                s 15
+              td
+                s 18
         p 字体设计比例被用在 字体设计工具类名 上.
         h2 字体设计变量
         h4 Font size 变量
         pre.highlight-less.highlight
-          code
-            span.c1
-              | // Heading sizes - mobile
-              | // h4&mdash;h6 remain the same size on both mobile &amp; desktop
-            span &#xA;
-            span.nv @h00-size-mobile
-            span.p :
-            span &nbsp;
-            span.m 40px
-            span.p ;
-            span &#xA;
-            span.nv @h0-size-mobile
-            span.p :
-            span &nbsp;
-            span.m 32px
-            span.p ;
-            span &#xA;
-            span.nv @h1-size-mobile
-            span.p :
-            span &nbsp;
-            span.m 26px
-            span.p ;
-            span &#xA;
-            span.nv @h2-size-mobile
-            span.p :
-            span &nbsp;
-            span.m 22px
-            span.p ;
-            span &#xA;
-            span.nv @h3-size-mobile
-            span.p :
-            span &nbsp;
-            span.m 18px
-            span.p ;
-            span &#xA;
-            span.c1
-              | // Heading sizes - desktop
-            span &#xA;
-            span.nv @h00-size
-            span.p :
-            span &nbsp;
-            span.m 48px
-            span.p ;
-            span &#xA;
-            span.nv @h0-size
-            span.p :
-            span &nbsp;
-            span.m 40px
-            span.p ;
-            span &#xA;
-            span.nv @h1-size
-            span.p :
-            span &nbsp;
-            span.m 32px
-            span.p ;
-            span &#xA;
-            span.nv @h2-size
-            span.p :
-            span &nbsp;
-            span.m 24px
-            span.p ;
-            span &#xA;
-            span.nv @h3-size
-            span.p :
-            span &nbsp;
-            span.m 20px
-            span.p ;
-            span &#xA;
-            span.nv @h4-size
-            span.p :
-            span &nbsp;
-            span.m 16px
-            span.p ;
-            span &#xA;
-            span.nv @h5-size
-            span.p :
-            span &nbsp;
-            span.m 14px
-            span.p ;
-            span &#xA;
-            span.nv @h6-size
-            span.p :
-            span &nbsp;
-            span.m 12px
-            span.p ;
+          code.hlcss
+            :highlight(lang="css")
+              // Heading sizes - desktop
+              @h00-size: 48px;
+              @h0-size: 40px;
+              @h1-size: 32px;
+              @h2-size: 24px;
+              @h3-size: 20px;
+              @h4-size: 16px;
+              @h5-size: 14px;
+              @h6-size: 12px;
         h4 Font weight 变量
         pre.highlight-less.highlight
           code
